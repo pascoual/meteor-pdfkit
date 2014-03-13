@@ -7,7 +7,7 @@ Create PDF with PDFKit node package on your Meteor application, server side only
 1. `npm install -g meteorite` (if not already installed)
 2. `mrt add pdfkit`
 3. Exemple: 
- ```
+```js
 var doc = new PDFDocument({size: 'A4', margin: 50});
 var imageBase64 = Meteor.users.findOne(this.userId).profile.picture;
 var imageBuffer2 = new Buffer(imageBase64.replace('data:image/png;base64,','') || '', 'base64');
@@ -15,7 +15,7 @@ doc.image(imageBuffer2, 10, 10, {height: 75});
 doc.fontSize(12);
 doc.text('PDFKit is simple', 10, 30, {align: 'center', width: 200});
 doc.write('PDFKitExample.pdf');
- ```
+```
 
 ## Documentation
 You can find informations about PDFKit node package here:
