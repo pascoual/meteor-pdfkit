@@ -1,5 +1,5 @@
 {
-  "name": "PDFKit",
+  "name": "pdfkit",
   "description": "PDFKit, the PDF generation library",
   "homepage": "https://github.com/pascoual/meteor-pdfkit",
   "author": "Pascal Richier @pascalrichier",
