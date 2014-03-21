@@ -23,6 +23,7 @@ You can find informations about PDFKit node package here:
 * PDFKit documentation: http://pdfkit.org/
 * PDFKit GIT: https://github.com/devongovett/pdfkit/
 
+
 This package add two Fibered methodes (non blocking thread, but synchronous):
 * writeSync(filename): saving the PDF in filename (can be a full path)
 * outputSync(): returning the PDF as binary String
