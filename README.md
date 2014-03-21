@@ -14,13 +14,18 @@ var imageBuffer2 = new Buffer(imageBase64.replace('data:image/png;base64,','') |
 doc.image(imageBuffer2, 10, 10, {height: 75});
 doc.fontSize(12);
 doc.text('PDFKit is simple', 10, 30, {align: 'center', width: 200});
-doc.write('PDFKitExample.pdf');
+// And call the Fibered sync methode
+doc.writeSync('PDFKitExample.pdf');
 ```
 
 ## Documentation
 You can find informations about PDFKit node package here:
 * PDFKit documentation: http://pdfkit.org/
 * PDFKit GIT: https://github.com/devongovett/pdfkit/
+
+This package add two Fibered methodes (non blocking thread, but synchronous):
+* writeSync(filename): saving the PDF in filename (can be a full path)
+* outputSync(): returning the PDF as binary String
 
 ## Contributing
 Contributors are very welcome. There are many things you can help with,
