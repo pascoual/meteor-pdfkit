@@ -1,11 +1,11 @@
 Package.describe({
   summary: "PDFKit, the PDF generation library",
-  version: "1.0.3",
+  version: "1.0.4",
   git: "https://github.com/pascoual/meteor-pdfkit"
 });
 
 Npm.depends({
-  pdfkit: "0.7.0"
+  pdfkit: "0.4.3"
 });
 
 Package.on_use(function (api) {
