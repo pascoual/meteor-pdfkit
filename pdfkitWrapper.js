@@ -2,7 +2,7 @@ PDFDocument = Npm.require('pdfkit');
 PDFDocument.PX_PER_CM = 28.33;
 
 fs = Npm.require('fs');
-fs.writeFileFiber = Meteor._wrapAsync(fs.writeFile.bind(fs));
+fs.writeFileFiber = Meteor.wrapAsync(fs.writeFile.bind(fs));
 
 // New output methode with a callBack respecting the classic params (err, result)
 PDFDocument.prototype.outputForMeteor = function(fn) {
@@ -30,6 +30,6 @@ PDFDocument.prototype.outputForMeteor = function(fn) {
 /**
  * Sync but non blocking thread (Fibered)
  */
-PDFDocument.prototype.outputSync = Meteor._wrapAsync(PDFDocument.prototype.outputForMeteor);
+PDFDocument.prototype.outputSync = Meteor.wrapAsync(PDFDocument.prototype.outputForMeteor);
 PDFDocument.prototype.writeSync = function (filename) {return fs.writeFileFiber(filename, this.outputSync(), 'binary');}
      
