@@ -4,9 +4,8 @@ PDFKit
 Create PDF with PDFKit node package on your Meteor application, server side only.
 
 ## Quick Start
-1. `npm install -g meteorite` (if not already installed)
-2. `mrt add pdfkit`
-3. Exemple: 
+1. `meteor add pascoual:pdfkit`
+2. Exemple: create a PDF server side 
 ```js
 var doc = new PDFDocument({size: 'A4', margin: 50});
 var imageBase64 = Meteor.users.findOne(this.userId).profile.picture;
@@ -16,6 +15,19 @@ doc.fontSize(12);
 doc.text('PDFKit is simple', 10, 30, {align: 'center', width: 200});
 // Save it on myApp/public/pdf folder (or any place) with the Fibered sync methode:
 doc.writeSync(process.env.PWD + '/public/pdf/PDFKitExample.pdf);
+```
+3. Exemple: a route that create and serve a PDF (thanks @babak49)
+``` 
+ Router.route('/getPDF', function() {
+ var doc = new PDFDocument({size: 'A4', margin: 50});
+ doc.fontSize(12);
+ doc.text('PDFKit is simple', 10, 30, {align: 'center', width: 200});
+ this.response.writeHead(200, {
+ 'Content-type': 'application/pdf',
+ 'Content-Disposition': "attachment; filename=test.pdf"
+ });
+ this.response.end( doc.outputSync() );
+ }, {where: 'server'});
 ```
 
 ## Documentation
@@ -27,6 +39,10 @@ You can find informations about PDFKit node package here:
 This package add two Fibered methodes (non blocking thread, but synchronous):
 * writeSync(filename): saving the PDF in filename (can be a full path)
 * outputSync(): returning the PDF as binary String
+
+## Contributors
+* Pascal Richier @pascalrichier
+* Bogdan @babak49
 
 ## Contributing
 Contributors are very welcome. There are many things you can help with,
