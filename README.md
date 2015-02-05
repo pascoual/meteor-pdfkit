@@ -1,7 +1,7 @@
 PDFKit
 ============
 
-Create PDF with PDFKit node package on your Meteor application, server side only.
+Create PDF with [PDFKit Node.js package](https://www.npmjs.com/package/pdfkit) in your Meteor application, server-side only.
 
 ## Quick Start
 1. `meteor add pascoual:pdfkit`
