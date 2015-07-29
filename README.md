@@ -5,7 +5,7 @@ Create PDF with [PDFKit Node.js package](https://www.npmjs.com/package/pdfkit) i
 
 ## Quick Start
 1. `meteor add pascoual:pdfkit`
-2. Exemple: create a PDF server side 
+2. Example: create a PDF server-side 
 
 
         ```js
@@ -18,7 +18,7 @@ Create PDF with [PDFKit Node.js package](https://www.npmjs.com/package/pdfkit) i
         // Save it on myApp/public/pdf folder (or any place) with the Fibered sync methode:
         doc.writeSync(process.env.PWD + '/public/pdf/PDFKitExample.pdf);
         ```
-3. Exemple: a route that create and serve a PDF (thanks @babak49)
+3. Example: a route that creates and serves a PDF (thanks @babak49)
 ``` 
  Router.route('/getPDF', function() {
  var doc = new PDFDocument({size: 'A4', margin: 50});
@@ -33,12 +33,11 @@ Create PDF with [PDFKit Node.js package](https://www.npmjs.com/package/pdfkit) i
 ```
 
 ## Documentation
-You can find informations about PDFKit node package here:
+You can find information about the PDFKit node package here:
 * PDFKit documentation: http://pdfkit.org/
 * PDFKit GIT: https://github.com/devongovett/pdfkit/
 
-
-This package add two Fibered methodes (non blocking thread, but synchronous):
+This package adds two Fibered methods (non-blocking thread, but synchronous):
 * writeSync(filename): saving the PDF in filename (can be a full path)
 * outputSync(): returning the PDF as binary String
 
