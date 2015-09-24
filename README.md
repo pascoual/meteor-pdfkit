@@ -17,18 +17,22 @@ Create PDF with [PDFKit Node.js package](https://www.npmjs.com/package/pdfkit) i
         doc.text('PDFKit is simple', 10, 30, {align: 'center', width: 200});
         // Save it on myApp/public/pdf folder (or any place) with the Fibered sync methode:
         doc.writeSync(process.env.PWD + '/public/pdf/PDFKitExample.pdf);
+        doc.end();
         ```
 3. Example: a route that creates and serves a PDF (thanks @babak49)
 ``` 
  Router.route('/getPDF', function() {
  var doc = new PDFDocument({size: 'A4', margin: 50});
- doc.fontSize(12);
- doc.text('PDFKit is simple', 10, 30, {align: 'center', width: 200});
  this.response.writeHead(200, {
  'Content-type': 'application/pdf',
  'Content-Disposition': "attachment; filename=test.pdf"
  });
- this.response.end( doc.outputSync() );
+ doc.pipe(this.response);
+ 
+ doc.fontSize(12);
+ doc.text('PDFKit is simple', 10, 30, {align: 'center', width: 200});
+ doc.end();
+
  }, {where: 'server'});
 ```
 
