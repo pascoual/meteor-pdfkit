@@ -10,13 +10,13 @@ Create PDF with [PDFKit Node.js package](https://www.npmjs.com/package/pdfkit) i
 
         ```js
         var doc = new PDFDocument({size: 'A4', margin: 50});
+        // Save it on myApp/public/pdf folder (or any place) with the Fibered sync methode:
+        doc.writeSync(process.env.PWD + '/public/pdf/PDFKitExample.pdf);
         var imageBase64 = Meteor.users.findOne(this.userId).profile.picture;
         var imageBuffer2 = new Buffer(imageBase64.replace('data:image/png;base64,','') || '', 'base64');
         doc.image(imageBuffer2, 10, 10, {height: 75});
         doc.fontSize(12);
         doc.text('PDFKit is simple', 10, 30, {align: 'center', width: 200});
-        // Save it on myApp/public/pdf folder (or any place) with the Fibered sync methode:
-        doc.writeSync(process.env.PWD + '/public/pdf/PDFKitExample.pdf);
         doc.end();
         ```
 3. Example: a route that creates and serves a PDF (thanks @babak49)
@@ -28,7 +28,7 @@ Create PDF with [PDFKit Node.js package](https://www.npmjs.com/package/pdfkit) i
  'Content-Disposition': "attachment; filename=test.pdf"
  });
  doc.pipe(this.response);
- 
+ // Here you create your pdf file
  doc.fontSize(12);
  doc.text('PDFKit is simple', 10, 30, {align: 'center', width: 200});
  doc.end();
