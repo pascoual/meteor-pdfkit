@@ -19,7 +19,7 @@ doc.image(imageBuffer2, 10, 10, {height: 75});
 doc.fontSize(12);
 doc.text('PDFKit is simple', 10, 30, {align: 'center', width: 200});
 // Save it on myApp/public/pdf folder (or any place) with the Fibered sync methode:
-doc.writeSync(process.env.PWD + '/public/pdf/PDFKitExample.pdf);
+doc.writeSync(process.env.PWD + '/public/pdf/PDFKitExample.pdf');
 ```
 3. Example: a route that creates and serves a PDF (thanks @babak49)
 ```js
