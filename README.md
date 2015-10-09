@@ -3,6 +3,11 @@ PDFKit
 
 Create PDF with [PDFKit Node.js package](https://www.npmjs.com/package/pdfkit) in your Meteor application, server-side only.
 
+This package is based on PDFKit 0.4.3 and use Fiber, for best performances and non-blocking
+thread (but synchronous).
+
+For the new pdfkit version (up to 0.7.1), server-side and client-side, please use the other package: [pascoual:PDFKitx](https://github.com/pascoual/meteor-pdfkitx)
+
 ## Quick Start
 1. `meteor add pascoual:pdfkit`
 2. Example: create a PDF server-side 
@@ -34,8 +39,10 @@ Create PDF with [PDFKit Node.js package](https://www.npmjs.com/package/pdfkit) i
 
 ## Documentation
 You can find information about the PDFKit node package here:
-* PDFKit documentation: http://pdfkit.org/
-* PDFKit GIT: https://github.com/devongovett/pdfkit/
+* [PDFKit
+  documentation](https://github.com/devongovett/pdfkit/blob/b1aec438e29f85d08e16ddf354f656cc570c9086/docs/guide.pdf)
+* [PDFKit
+  GIT](https://github.com/devongovett/pdfkit/tree/b1aec438e29f85d08e16ddf354f656cc570c9086)
 
 This package adds two Fibered methods (non-blocking thread, but synchronous):
 * writeSync(filename): saving the PDF in filename (can be a full path)
