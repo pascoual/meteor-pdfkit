@@ -9,8 +9,8 @@ thread (but synchronous).
 For the new pdfkit version (up to 0.7.1), server-side and client-side, please use the other package: [pascoual:PDFKitx](https://github.com/pascoual/meteor-pdfkitx)
 
 ## Quick Start
-1. `meteor add pascoual:pdfkit`
-2. Example: create a PDF server-side 
+#####1. `meteor add pascoual:pdfkit`
+#####2. Example: create a PDF server-side 
 ```js
 var doc = new PDFDocument({size: 'A4', margin: 50});
 var imageBase64 = Meteor.users.findOne(this.userId).profile.picture;
@@ -21,7 +21,7 @@ doc.text('PDFKit is simple', 10, 30, {align: 'center', width: 200});
 // Save it on myApp/public/pdf folder (or any place) with the Fibered sync methode:
 doc.writeSync(process.env.PWD + '/public/pdf/PDFKitExample.pdf');
 ```
-3. Example: a route that creates and serves a PDF (thanks @babak49)
+#####3. Example: a route that creates and serves a PDF (thanks @babak49)
 ```js
  Router.route('/getPDF', function() {
  var doc = new PDFDocument({size: 'A4', margin: 50});
