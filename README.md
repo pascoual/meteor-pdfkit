@@ -11,20 +11,18 @@ For the new pdfkit version (up to 0.7.1), server-side and client-side, please us
 ## Quick Start
 1. `meteor add pascoual:pdfkit`
 2. Example: create a PDF server-side 
-
-
-        ```js
-        var doc = new PDFDocument({size: 'A4', margin: 50});
-        var imageBase64 = Meteor.users.findOne(this.userId).profile.picture;
-        var imageBuffer2 = new Buffer(imageBase64.replace('data:image/png;base64,','') || '', 'base64');
-        doc.image(imageBuffer2, 10, 10, {height: 75});
-        doc.fontSize(12);
-        doc.text('PDFKit is simple', 10, 30, {align: 'center', width: 200});
-        // Save it on myApp/public/pdf folder (or any place) with the Fibered sync methode:
-        doc.writeSync(process.env.PWD + '/public/pdf/PDFKitExample.pdf);
-        ```
+```js
+var doc = new PDFDocument({size: 'A4', margin: 50});
+var imageBase64 = Meteor.users.findOne(this.userId).profile.picture;
+var imageBuffer2 = new Buffer(imageBase64.replace('data:image/png;base64,','') || '', 'base64');
+doc.image(imageBuffer2, 10, 10, {height: 75});
+doc.fontSize(12);
+doc.text('PDFKit is simple', 10, 30, {align: 'center', width: 200});
+// Save it on myApp/public/pdf folder (or any place) with the Fibered sync methode:
+doc.writeSync(process.env.PWD + '/public/pdf/PDFKitExample.pdf);
+```
 3. Example: a route that creates and serves a PDF (thanks @babak49)
-``` 
+```js
  Router.route('/getPDF', function() {
  var doc = new PDFDocument({size: 'A4', margin: 50});
  doc.fontSize(12);
