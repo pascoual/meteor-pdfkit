@@ -1,6 +1,6 @@
 Package.describe({
   summary: "PDFKit, the PDF generation library",
-  version: "1.0.5",
+  version: "1.0.6",
   git: "https://github.com/pascoual/meteor-pdfkit"
 });
 
