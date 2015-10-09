@@ -1,5 +1,5 @@
 Package.describe({
-  summary: "PDFKit, PDF generation library. Use PDFKit 0.4.3 and Fiber for best performances and non-blocking thread !",
+  summary: "PDF generation library. Use PDFKit 0.4.3 and Fiber for best performances and non-blocking thread !",
   version: "1.0.6",
   git: "https://github.com/pascoual/meteor-pdfkit"
 });
