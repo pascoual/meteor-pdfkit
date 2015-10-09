@@ -37,9 +37,9 @@ doc.writeSync(process.env.PWD + '/public/pdf/PDFKitExample.pdf');
 
 ## Documentation
 You can find information about the PDFKit node package here:
-* [PDFKit
+* [PDFKit 0.4.3
   documentation](https://github.com/devongovett/pdfkit/blob/b1aec438e29f85d08e16ddf354f656cc570c9086/docs/guide.pdf)
-* [PDFKit
+* [PDFKit 0.4.3
   GIT](https://github.com/devongovett/pdfkit/tree/b1aec438e29f85d08e16ddf354f656cc570c9086)
 
 This package adds two Fibered methods (non-blocking thread, but synchronous):
